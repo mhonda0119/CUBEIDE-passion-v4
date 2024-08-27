@@ -103,7 +103,7 @@ int main(void)
   MX_TIM1_Init();
   MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
-  printf("hello_c");
+  printf("hello_c\n");
   cout << "hello_c++" << endl;
   /* USER CODE END 2 */
 
