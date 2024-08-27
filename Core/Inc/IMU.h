@@ -8,6 +8,14 @@
 #ifndef _IMU_H_
 #define _IMU_H_
 
+class IMU{
+private:
+
+public:
+	void Init();
+	void ReadGyroVal();
+	void ReadAccelVal();
+};
 
 
 
