@@ -21,6 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <adc_driver.h>
 #include <iostream>
 #include "peripheral.h"
 #include "stdout.h"
@@ -65,7 +66,7 @@ using namespace std;
   * @brief  The application entry point.
   * @retval int
   */
-int main(void)
+int main(int argc, char** argv)
 {
 
   /* USER CODE BEGIN 1 */
@@ -105,6 +106,11 @@ int main(void)
   /* USER CODE BEGIN 2 */
   printf("hello_c\n");
   cout << "hello_c++" << endl;
+
+  ADCDriver adc1,adc2,adc3;
+
+  //cout << adc.get_val() << endl;
+  //uint16_t adc_buff[5];
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -112,7 +118,11 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	//cout << adc.get_val() << endl;
+	adc1.ReadAdcValue(&hadc1, 1);
+	adc2.ReadAdcValue(&hadc1, 2);
+	adc3.ReadAdcValue(&hadc1, 3);
+	HAL_Delay(5*100);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
