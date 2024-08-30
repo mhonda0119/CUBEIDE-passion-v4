@@ -19,7 +19,7 @@ class IMU {
 private:
 
 protected:
-	MotionParameter imu;
+	MotionParameter imu_;
 
 public:
 	virtual void ReadIMUVal(uint8_t);

@@ -29,12 +29,12 @@ float ICM20689::OMEGA_READ(uint8_t H_reg) {
 
 void ICM20689::ReadIMUVal(){
 
-	imu.accel[X] = -1 *ACCEL_READ(0x3B);
-	imu.accel[Y] = ACCEL_READ(0x3D);
-	imu.accel[Z] = ACCEL_READ(0x3F);
-	imu.omega[X] = OMEGA_READ(0x43);
-	imu.omega[Y] = OMEGA_READ(0x45);
-	imu.omega[Z] = OMEGA_READ(0x47);
+	imu_.accel[X] = -1 *ACCEL_READ(0x3B);
+	imu_.accel[Y] = ACCEL_READ(0x3D);
+	imu_.accel[Z] = ACCEL_READ(0x3F);
+	imu_.omega[X] = OMEGA_READ(0x43);
+	imu_.omega[Y] = OMEGA_READ(0x45);
+	imu_.omega[Z] = OMEGA_READ(0x47);
 
 }
 
