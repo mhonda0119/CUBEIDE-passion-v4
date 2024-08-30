@@ -5,7 +5,7 @@
  *      Author: IshiiLabHonda
  */
 
-#include "imu.h"
+#include <imu.h>
 
 MotionParameter get_imu(){
 	return MotionParameter* imu;

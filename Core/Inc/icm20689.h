@@ -8,7 +8,7 @@
 #ifndef _ICM20689_H_
 #define _ICM20689_H_
 
-#include "imu.h"
+#include <imu.h>
 #include "motion_parameter.h"
 #include "spi_driver.h"
 
