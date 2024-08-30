@@ -107,7 +107,7 @@ int main(int argc, char** argv)
   printf("hello_c\n");
   cout << "hello_c++" << endl;
 
-  ADCDriver adc1,adc2,adc3;
+  ADCDriver adc1;
 
   //cout << adc.get_val() << endl;
   //uint16_t adc_buff[5];
@@ -118,10 +118,11 @@ int main(int argc, char** argv)
   while (1)
   {
     /* USER CODE END WHILE */
-	//cout << adc.get_val() << endl;
 	adc1.ReadAdcValue(&hadc1, 1);
-	adc2.ReadAdcValue(&hadc1, 2);
-	adc3.ReadAdcValue(&hadc1, 3);
+	cout << adc1.get_val() <<"\n";
+	//adc1.ReadAdcValue(&hadc1, 1);
+	//adc2.ReadAdcValue(&hadc1, 2);
+	//adc3.ReadAdcValue(&hadc1, 3);
 	HAL_Delay(5*100);
     /* USER CODE BEGIN 3 */
   }
