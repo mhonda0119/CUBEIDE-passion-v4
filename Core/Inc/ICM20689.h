@@ -1,12 +1,12 @@
 /*
- * ICM20689.h
+ * icm20689.h
  *
- *  Created on: Aug 28, 2024
- *      Author: MasakatsuHonda
+ *  Created on: Aug 30, 2024
+ *      Author: IshiiLabHonda
  */
 
-#ifndef _ICM20689_H_
-#define _ICM20689_H_
+#ifndef INC_ICM20689_H_
+#define INC_ICM20689_H_
 
 
 

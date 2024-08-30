@@ -1,21 +1,13 @@
 /*
- * IMU.h
+ * imu.h
  *
- *  Created on: Aug 28, 2024
- *      Author: MasakatsuHonda
+ *  Created on: Aug 30, 2024
+ *      Author: IshiiLabHonda
  */
 
-#ifndef _IMU_H_
-#define _IMU_H_
+#ifndef INC_IMU_H_
+#define INC_IMU_H_
 
-class IMU{
-private:
-
-public:
-	void Init();
-	void ReadGyroVal();
-	void ReadAccelVal();
-};
 
 
 
