@@ -5,6 +5,10 @@
  *      Author: IshiiLabHonda
  */
 
+#include "imu.h"
 
-
+MotionParameter get_imu(){
+	return MotionParameter* imu;
+	//参照わたしでMotionParameter imuを戻り値にしたい
+}
 

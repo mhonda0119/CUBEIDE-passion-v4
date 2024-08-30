@@ -7,20 +7,22 @@
 
 #include "spi_driver.h"
 
-uint8_t ReadByte(uint8_t reg) {
-    uint8_t rx_data, tx_data;
+using namespace std;
+
+uint8_t SPIDriver::ReadByte(uint8_t reg) {
+    uint8_t read_val_, tx_data;
     HAL_GPIO_WritePin(GPIOD, CS_Pin, GPIO_PIN_RESET); // cs = 0;//CSピンをenableにする.
     tx_data = reg | 0x80;
     HAL_SPI_Transmit(&hspi3, &tx_data, 1, 100);
-    HAL_SPI_Receive(&hspi3, &rx_data, 1, 100);
+    HAL_SPI_Receive(&hspi3, &read_val_, 1, 100);
     HAL_GPIO_WritePin(GPIOD, CS_Pin, GPIO_PIN_SET); // cs = 1;
-    return rx_data;
+    return read_val_;
 }
-void WriteByte(uint8_t reg, uint8_t rx_data) {
+void SPIDriver::WriteByte(uint8_t reg, uint8_t write_val) {
 	uint8_t tx_data;
     tx_data = reg & 0x7F;
     HAL_GPIO_WritePin(GPIOD, CS_Pin, GPIO_PIN_RESET); // cs = 0;
     HAL_SPI_Transmit(&hspi3, &tx_data, 1, 100);
-    HAL_SPI_Transmit(&hspi3, &rx_data, 1, 100);
+    HAL_SPI_Transmit(&hspi3, &write_val, 1, 100);
     HAL_GPIO_WritePin(GPIOD, CS_Pin, GPIO_PIN_SET); // cs = 1;
 }

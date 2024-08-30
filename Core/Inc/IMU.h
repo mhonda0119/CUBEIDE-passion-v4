@@ -5,11 +5,26 @@
  *      Author: IshiiLabHonda
  */
 
-#ifndef INC_IMU_H_
-#define INC_IMU_H_
+#ifndef _IMU_H_
+#define _IMU_H_
+
+#include <stdint.h>
+#include <stdout.h>
+#include <iostream>
+#include "peripheral.h"
+#include "motion_parameter.h"
+
+class IMU {
+
+private:
+
+protected:
+	MotionParameter imu;
+
+public:
+	virtual void ReadIMUVal(uint8_t);
+	float get_imu();
+};
 
 
-
-
-
-#endif /* INC_IMU_H_ */
+#endif // _IMU_H_
