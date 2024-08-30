@@ -7,8 +7,8 @@
 
 #include <imu.h>
 
-MotionParameter get_imu(){
-
-	//参照わたしでMotionParameter imuを戻り値にしたい
+MotionParameter& get_imu(){
+	static MotionParameter imu;
+	return imu;
 }
 
