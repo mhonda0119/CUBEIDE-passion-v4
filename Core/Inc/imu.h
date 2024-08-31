@@ -14,16 +14,12 @@
 #include "peripheral.h"
 #include "motion_parameter.h"
 
+
 class IMU {
-
-private:
-
-protected:
-	MotionParameter imu_;
-
 public:
-	virtual void ReadIMUVal(uint8_t);
-	float get_imu();
+	virtual void Init() = 0;
+	virtual void ReadIMUVal() = 0;
+	virtual MotionParameter* get_imu_ptr() = 0;
 };
 
 

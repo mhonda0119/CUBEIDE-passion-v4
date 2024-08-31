@@ -24,6 +24,8 @@
 #include <iostream>
 #include "peripheral.h"
 #include "stdout.h"
+#include "imu_creater.h"
+#include "icm20689.h"
 //#include "printf.h"
 /* USER CODE END Includes */
 
@@ -105,6 +107,13 @@ int main(void)
   /* USER CODE BEGIN 2 */
   printf("hello_c\n");
   cout << "hello_c++" << endl;
+
+  IMUCreater imu_c;
+  IMU* imu = nullptr;
+  imu = imu_c.ImIMU();
+  MotionParameter* mp;
+  imu -> Init();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -112,7 +121,15 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  imu -> ReadIMUVal();
+	  mp = imu -> get_imu_ptr();
+	  cout << mp -> omega[X] << endl;
+	  cout << mp -> omega[Y] << endl;
+	  cout << mp -> omega[Z] << endl;
+	  cout << mp -> accel[X] << endl;
+	  cout << mp -> accel[Y] << endl;
+	  cout << mp -> accel[Z] << endl;
+	  HAL_Delay(5*100);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
