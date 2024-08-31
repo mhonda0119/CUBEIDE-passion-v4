@@ -21,6 +21,3 @@ IMU* IMUCreater::ImIMU() {
             return nullptr;
     }
 }
-
-
-
