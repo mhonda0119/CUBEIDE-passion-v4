@@ -123,12 +123,12 @@ int main(void)
     /* USER CODE END WHILE */
 	  imu -> ReadIMUVal();
 	  mp = imu -> get_imu_ptr();
-	  cout << mp -> omega[X] << endl;
-	  cout << mp -> omega[Y] << endl;
-	  cout << mp -> omega[Z] << endl;
-	  cout << mp -> accel[X] << endl;
-	  cout << mp -> accel[Y] << endl;
-	  cout << mp -> accel[Z] << endl;
+	  cout << mp -> omega[static_cast<int>(COORD::X)] << endl;
+	  cout << mp -> omega[static_cast<int>(COORD::Y)] << endl;
+	  cout << mp -> omega[static_cast<int>(COORD::Z)] << endl;
+	  cout << mp -> accel[static_cast<int>(COORD::X)] << endl;
+	  cout << mp -> accel[static_cast<int>(COORD::Y)] << endl;
+	  cout << mp -> accel[static_cast<int>(COORD::Z)] << endl;
 	  HAL_Delay(5*100);
     /* USER CODE BEGIN 3 */
   }

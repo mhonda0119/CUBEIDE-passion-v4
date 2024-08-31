@@ -9,7 +9,10 @@
 #define _MOTIONPARAMETER_H
 
 // 座標の列挙型
-enum Coordinate { X = 0, Y, Z };
+enum struct COORD
+{
+	X = 0, Y, Z
+};
 
 // MotionParameter 構造体の定義
 struct MotionParameter {
