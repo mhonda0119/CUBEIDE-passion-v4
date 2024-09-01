@@ -11,17 +11,19 @@
 #include "icm20689.h"
 #include <cstring>
 
-class IMUCreater{
-private:
-	enum struct IMU_NAME{//enum classはenumよりscopeが明示されていて名前の衝突を避けることが出来るらしい
-		ICM20689 = 0,
+namespace imu{
+	class Creater{
+	private:
+		enum struct IMU_NAME{//enum classはenumよりscopeが明示されていて名前の衝突を避けることが出来るらしい
+			ICM20689 = 0,
+		};
+		IMU_NAME name_;
+	public:
+		Creater();
+		std::unique_ptr<Product> Create();
+		~Creater() = default;
 	};
-	IMU_NAME name_;
-public:
-	IMUCreater();
-	IMU* ImIMU();
-};
-
+}
 
 
 

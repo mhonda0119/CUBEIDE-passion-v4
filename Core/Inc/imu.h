@@ -12,16 +12,19 @@
 #include <stdint.h>
 #include <stdout.h>
 #include <iostream>
-#include "peripheral.h"
+#include <memory>
 #include "motion_parameter.h"
 
-
-class IMU {
-public:
-	virtual void Init() = 0;
-	virtual void ReadIMUVal() = 0;
-	virtual MotionParameter* get_imu_ptr() = 0;
-};
+namespace imu{
+	class Product {
+	public:
+		Product() = default;
+		virtual void Init() = 0;
+		virtual void ReadVal() = 0;
+		virtual MotionParameter* get_imu_ptr() = 0;
+		virtual ~Product() = default;//仮想デストラクタ（親クラス）
+	};
+}
 
 
 #endif // _IMU_H_

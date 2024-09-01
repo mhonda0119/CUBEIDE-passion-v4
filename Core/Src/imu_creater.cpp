@@ -7,17 +7,19 @@
 
 #include "imu_creater.h"
 
-using namespace std;
+namespace imu{
+	Creater::Creater(){
+		name_ = IMU_NAME::ICM20689;
+	}
 
-IMUCreater::IMUCreater(){
-	name_ = IMU_NAME::ICM20689;
-}
-
-IMU* IMUCreater::ImIMU() {
-    switch (name_) {
-        case IMU_NAME::ICM20689:
-            return static_cast<IMU*>(new ICM20689());
-        default:
-            return nullptr;
-    }
+	std::unique_ptr<Product> Creater::Create() {
+		std::unique_ptr<Product> imu;
+		switch (name_) {
+			case IMU_NAME::ICM20689:
+				imu = std::make_unique<ICM20689>();
+				return imu;
+			default:
+				return nullptr;
+		}
+	}
 }

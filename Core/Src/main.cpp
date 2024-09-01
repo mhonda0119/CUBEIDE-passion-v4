@@ -22,10 +22,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <iostream>
-#include "peripheral.h"
 #include "stdout.h"
 #include "imu_creater.h"
-#include "icm20689.h"
 //#include "printf.h"
 /* USER CODE END Includes */
 
@@ -60,7 +58,7 @@
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-using namespace std;
+//main文はグローバル名前空間に存在してないとだめらしい
 /* USER CODE END 0 */
 
 /**
@@ -106,13 +104,13 @@ int main(void)
   MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
   printf("hello_c\n");
-  cout << "hello_c++" << endl;
+  std::cout << "hello_c++" << std::endl;
 
-  IMUCreater imu_c;
-  IMU* imu = nullptr;
-  imu = imu_c.ImIMU();
-  MotionParameter* mp;
+  imu::Creater imu_c;
+  std::unique_ptr<imu::Product> imu = imu_c.Create();
   imu -> Init();
+  MotionParameter* mp;
+  //imu -> Init();
 
   /* USER CODE END 2 */
 
@@ -121,14 +119,14 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  imu -> ReadIMUVal();
+	  imu -> ReadVal();
 	  mp = imu -> get_imu_ptr();
-	  cout << mp -> omega[static_cast<int>(COORD::X)] << endl;
-	  cout << mp -> omega[static_cast<int>(COORD::Y)] << endl;
-	  cout << mp -> omega[static_cast<int>(COORD::Z)] << endl;
-	  cout << mp -> accel[static_cast<int>(COORD::X)] << endl;
-	  cout << mp -> accel[static_cast<int>(COORD::Y)] << endl;
-	  cout << mp -> accel[static_cast<int>(COORD::Z)] << endl;
+	  std::cout << mp -> omega[static_cast<int>(COORD::X)] << std::endl;
+	  std::cout << mp -> omega[static_cast<int>(COORD::Y)] << std::endl;
+	  std::cout << mp -> omega[static_cast<int>(COORD::Z)] << std::endl;
+	  std::cout << mp -> accel[static_cast<int>(COORD::X)] << std::endl;
+	  std::cout << mp -> accel[static_cast<int>(COORD::Y)] << std::endl;
+	  std::cout << mp -> accel[static_cast<int>(COORD::Z)] << std::endl;
 	  HAL_Delay(5*100);
     /* USER CODE BEGIN 3 */
   }
