@@ -25,6 +25,7 @@
 #include <iostream>
 #include "peripheral.h"
 #include "stdout.h"
+#include <memory>
 //#include "printf.h"
 /* USER CODE END Includes */
 
@@ -59,7 +60,6 @@
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-using namespace std;
 /* USER CODE END 0 */
 
 /**
@@ -105,9 +105,9 @@ int main(int argc, char** argv)
   MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
   printf("hello_c\n");
-  cout << "hello_c++" << endl;
+  std::cout << "hello_c++" << std::endl;
 
-  ADCDriver adc1;
+  std::unique_ptr<adc::Driver> adc1 = std::make_unique<adc::Driver>();
 
   //cout << adc.get_val() << endl;
   //uint16_t adc_buff[5];
@@ -118,8 +118,8 @@ int main(int argc, char** argv)
   while (1)
   {
     /* USER CODE END WHILE */
-	adc1.ReadAdcValue(&hadc1, 1);
-	cout << adc1.get_val() <<"\n";
+	adc1->ReadValue(&hadc1, 1);
+	std::cout << adc1->get_val() << std::endl;
 	//adc1.ReadAdcValue(&hadc1, 1);
 	//adc2.ReadAdcValue(&hadc1, 2);
 	//adc3.ReadAdcValue(&hadc1, 3);

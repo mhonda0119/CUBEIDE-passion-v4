@@ -7,18 +7,21 @@
 
 #include <adc_driver.h>
 
-using namespace std;
+namespace adc{
 
-void ADCDriver::ReadAdcValue(ADC_HandleTypeDef *hadc,uint32_t rank){
-	HAL_ADC_Start_DMA(hadc,(uint32_t *)adc_buff_,adc_channels_);
-	val_ = (int)adc_buff_[rank];
+void Driver::ReadValue(ADC_HandleTypeDef *hadc,uint32_t rank){
+	HAL_ADC_Start_DMA(hadc,(uint32_t *)buff_,channels_);
+	val_ = (int)buff_[rank];
 	//cout << val_ << endl;
 	//cout << val_ << "1" << endl;
 }
 
-int ADCDriver::get_val(){
+int Driver::get_val(){
 	return val_;
 }
+
+}
+
 
 
 

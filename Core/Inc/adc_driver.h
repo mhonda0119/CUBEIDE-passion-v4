@@ -13,16 +13,18 @@
 #include "stdint.h"
 #include <iostream>
 
-class ADCDriver {
-private:
-	int val_ = 0;
-	uint16_t adc_buff_[10] ={0};
-	uint32_t adc_channels_ = 5;
+namespace adc{
+	class Driver {
+	private:
+		int val_ = 0;
+		uint16_t buff_[10] ={0};
+		uint32_t channels_ = 5;
 
-public:
-	void ReadAdcValue(ADC_HandleTypeDef *hadc,uint32_t rank);
-	int get_val();
+	public:
+		void ReadValue(ADC_HandleTypeDef *hadc,uint32_t rank);
+		int get_val();
 
-};
+	};
+}
 
 #endif /* _ADCDRIVER_H_ */
