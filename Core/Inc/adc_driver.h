@@ -16,14 +16,16 @@
 namespace adc{
 	class Driver {
 	private:
-		int val_ = 0;
+		//int val_ = 0;
 		uint16_t buff_[10] ={0};
 		uint32_t channels_ = 5;
 
 	public:
-		void ReadValue(ADC_HandleTypeDef *hadc,uint32_t rank);
-		int get_val();
-
+		Driver() = default;
+		void ReadVal(ADC_HandleTypeDef *hadc);//,uint32_t rank
+		//int get_val();
+		int* get_buff_ptr();
+		~Driver() = default;
 	};
 }
 

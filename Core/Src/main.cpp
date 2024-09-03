@@ -21,11 +21,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <adc_driver.h>
 #include <iostream>
 #include "peripheral.h"
 #include "stdout.h"
-#include <memory>
+#include <pxstr_creater.h>
 //#include "printf.h"
 /* USER CODE END Includes */
 
@@ -107,8 +106,12 @@ int main(int argc, char** argv)
   printf("hello_c\n");
   std::cout << "hello_c++" << std::endl;
 
-  std::unique_ptr<adc::Driver> adc1 = std::make_unique<adc::Driver>();
+  //std::unique_ptr<adc::Driver> adc1 = std::make_unique<adc::Driver>();
 
+  std::unique_ptr<pxstr::Creater> pxstr_c = std::make_unique<pxstr::Creater>();
+  std::unique_ptr<pxstr::Product> pxstr = pxstr_c->Create();
+  pxstr->Init();
+  WallParameter* wp;
   //cout << adc.get_val() << endl;
   //uint16_t adc_buff[5];
   /* USER CODE END 2 */
@@ -117,9 +120,15 @@ int main(int argc, char** argv)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+  pxstr -> ReadVal();
+  wp = pxstr -> get_photo_ptr();
+  std::cout << "L: " << wp->dir[static_cast<int>(DIR::L)] << std::endl;
+  std::cout << "FL: " << wp->dir[static_cast<int>(DIR::FL)] << std::endl;
+  std::cout << "R: " << wp->dir[static_cast<int>(DIR::R)] << std::endl;
+  std::cout << "FR: " << wp->dir[static_cast<int>(DIR::FR)] << std::endl;
     /* USER CODE END WHILE */
-	adc1->ReadValue(&hadc1, 1);
-	std::cout << adc1->get_val() << std::endl;
+	//adc1->ReadVal(&hadc1, 1);
+	//std::cout << adc1->get_val() << std::endl;
 	//adc1.ReadAdcValue(&hadc1, 1);
 	//adc2.ReadAdcValue(&hadc1, 2);
 	//adc3.ReadAdcValue(&hadc1, 3);

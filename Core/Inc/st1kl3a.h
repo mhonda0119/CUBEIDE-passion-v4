@@ -8,18 +8,18 @@
 #ifndef _ST1KL3A_H_
 #define _ST1KL3A_H_
 
-#include "phototransistor.h"
+#include "pxstr.h"
 
-namespace phototransistor{
+namespace pxstr {
 
-	class ST1KL3A : public Product{
+	class ST1KL3A : public pxstr::Product{
 	private:
 		WallParameter photo_;
 	public:
 		ST1KL3A() = default;
 		void Init() override ;
 		void ReadVal() override ;
-		WallParameter* get_photo_ptr() override;
+		WallParameter* get_photo_ptr() override ;
 		virtual ~ST1KL3A() = default;
 	};
 }

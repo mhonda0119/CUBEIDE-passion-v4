@@ -15,19 +15,20 @@
 #include "adc_driver.h"
 #include "wall_parameter.h"
 
-namespace phototransister{
+namespace pxstr {
 
-class Product{
+	class Product{
 
-private:
+	private:
 
-public:
-	Product() = default;
-	virtual void Init() = 0;
-	virtual void ReadVal() = 0;
-	virtual ~Product() = default;//仮想デストラクタ（親クラス）
+	public:
+		Product() = default;
+		virtual void Init() = 0;
+		virtual void ReadVal() = 0;
+		virtual WallParameter* get_photo_ptr() = 0;
+		virtual ~Product() = default;//仮想デストラクタ（親クラス）
 
-};
+	};
 
 }
 
