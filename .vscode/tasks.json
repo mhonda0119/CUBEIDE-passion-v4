@@ -1,0 +1,50 @@
+{
+    "version": "2.0.0",
+    "type":"shell",
+    "echoCommand": true,
+    "tasks": [
+{
+    "label": "Build",
+    "type": "process",
+    "command": "make",
+    "problemMatcher":"$gcc",
+    "group": {
+        "kind": "build",
+        "isDefault": true
+    },
+    "args": [
+        "-j16",
+        "all",
+        "GCC_PATH=C:/Tools/gcc-arm-none-eabi-10.3-2021.10/bin"
+    ],
+    "options": {
+        "cwd": "Debug",
+        "env": {
+            "PATH": "C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin;C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.make.win32_2.1.300.202402091052/tools/bin;C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_3.2.0.202405231314/jre/bin/server;C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_3.2.0.202405231314/jre/bin;c:/Users/IshiiLabHonda/AppData/Local/Programs/cursor/resources/app/bin;C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler;C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler;C:/Windows/system32;C:/Windows;C:/Windows/System32/Wbem;C:/Windows/System32/WindowsPowerShell/v1.0/;C:/Windows/System32/OpenSSH/;C:/Program Files/dotnet/;C:/Program Files/MATLAB/R2022b/runtime/win64;C:/Program Files/MATLAB/R2022b/bin;C:/gcc/mingw64/bin;C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR;C:/Program Files/Git/cmd;C:/Program Files/Calibre2/;C:/ProgramData/MATLAB/SupportPackages/R2022b/3P.instrset/ev3sourcerylite.instrset/CodeSourcery/bin;C:/Users/IshiiLabHonda/AppData/Local/Microsoft/WindowsApps;C:/Program Files/mingw64/bin;C:/MinGW/bin;C:/texlive/2023/bin/windows;C:/Users/IshiiLabHonda/AppData/Local/GitHubDesktop/bin;C:/msys64/ucrt64/bin;;c:/Users/IshiiLabHonda/AppData/Local/Programs/cursor/resources/app/bin;c:/Users/IshiiLabHonda/AppData/Local/Programs/cursor/resources/app/bin;C:/ProgramData/MATLAB/SupportPackages/R2022b/3P.instrset/ev3sourcerylite.instrset/CodeSourcery/bin;C:/Users/IshiiLabHonda/AppData/Local/Microsoft/WindowsApps;C:/Program Files/mingw64/bin;C:/MinGW/bin;C:/texlive/2023/bin/windows;C:/Users/IshiiLabHonda/AppData/Local/GitHubDesktop/bin;C:/msys64/ucrt64/bin;C:/Users/IshiiLabHonda/AppData/Local/Programs/Microsoft VS Code/bin;C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE",
+            "compiler_prefix": "arm-none-eabi-"
+        }
+    }
+},
+{
+    "label": "Clean",
+    "type": "shell",
+    "command": "make",
+    "problemMatcher":"$gcc",
+    "group": {
+        "kind": "build",
+        "isDefault": false
+    },
+    "args": [
+        "-j16",
+        "clean"
+    ],
+    "options": {
+        "cwd": "Debug",
+        "env": {
+            "PATH": "C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin;C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.make.win32_2.1.300.202402091052/tools/bin;C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_3.2.0.202405231314/jre/bin/server;C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_3.2.0.202405231314/jre/bin;c:/Users/IshiiLabHonda/AppData/Local/Programs/cursor/resources/app/bin;C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler;C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler;C:/Windows/system32;C:/Windows;C:/Windows/System32/Wbem;C:/Windows/System32/WindowsPowerShell/v1.0/;C:/Windows/System32/OpenSSH/;C:/Program Files/dotnet/;C:/Program Files/MATLAB/R2022b/runtime/win64;C:/Program Files/MATLAB/R2022b/bin;C:/gcc/mingw64/bin;C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR;C:/Program Files/Git/cmd;C:/Program Files/Calibre2/;C:/ProgramData/MATLAB/SupportPackages/R2022b/3P.instrset/ev3sourcerylite.instrset/CodeSourcery/bin;C:/Users/IshiiLabHonda/AppData/Local/Microsoft/WindowsApps;C:/Program Files/mingw64/bin;C:/MinGW/bin;C:/texlive/2023/bin/windows;C:/Users/IshiiLabHonda/AppData/Local/GitHubDesktop/bin;C:/msys64/ucrt64/bin;;c:/Users/IshiiLabHonda/AppData/Local/Programs/cursor/resources/app/bin;c:/Users/IshiiLabHonda/AppData/Local/Programs/cursor/resources/app/bin;C:/ProgramData/MATLAB/SupportPackages/R2022b/3P.instrset/ev3sourcerylite.instrset/CodeSourcery/bin;C:/Users/IshiiLabHonda/AppData/Local/Microsoft/WindowsApps;C:/Program Files/mingw64/bin;C:/MinGW/bin;C:/texlive/2023/bin/windows;C:/Users/IshiiLabHonda/AppData/Local/GitHubDesktop/bin;C:/msys64/ucrt64/bin;C:/Users/IshiiLabHonda/AppData/Local/Programs/Microsoft VS Code/bin;C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE",
+            "compiler_prefix": "arm-none-eabi-"
+        }
+    }
+}
+]   
+}

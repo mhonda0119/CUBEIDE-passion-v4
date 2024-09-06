@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "name": "STM32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceRoot}/Core/inc",
+                "${workspaceRoot}/Drivers/STM32F4xx_HAL_Driver/Inc",
+                "${workspaceRoot}/Drivers/CMSIS/device",
+                "${workspaceRoot}/Drivers/CMSIS/include",
+                "C:/Tools/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/**",
+                "C:/Tools/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "STM32F405xx",
+                "USE_HAL_DRIVER",
+                "__weak=__attribute__((weak))"
+            ],
+            "compilerPath": "C:/Tools/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gcc",
+            "browse": {
+                "path": ["${workspaceRoot}"]
+            },
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            //"intelliSenseMode": "gcc-arm"
+        }
+    ],
+    "version": 4
+}
