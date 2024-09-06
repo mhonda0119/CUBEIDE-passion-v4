@@ -4,8 +4,12 @@
             "name": "STM32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:/Tools/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include**",
-                "C:/Tools/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include"
+                "${workspaceRoot}/Core/inc",
+                "${workspaceRoot}/Drivers/STM32F4xx_HAL_Driver/Inc",
+                "${workspaceRoot}/Drivers/CMSIS/device",
+                "${workspaceRoot}/Drivers/CMSIS/include",
+                "C:/Tools/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/**",
+                "C:/Tools/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -16,9 +20,12 @@
                 "__weak=__attribute__((weak))"
             ],
             "compilerPath": "C:/Tools/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gcc",
-            "cStandard": "c11",
+            "browse": {
+                "path": ["${workspaceRoot}"]
+            },
+            "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "gcc-arm"
+            //"intelliSenseMode": "gcc-arm"
         }
     ],
     "version": 4
