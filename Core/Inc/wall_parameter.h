@@ -10,7 +10,7 @@
 
 enum struct DIR
 {
-	L = 0, FL , R , FR
+	R = 0, L , FR , FL
 };
 
 // MotionParameter 構造体の定義
